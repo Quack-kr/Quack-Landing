@@ -1,28 +1,23 @@
-import "./globals.css"
-import { Inter } from "next/font/google"
-import type React from "react"
-import type { Metadata } from "next"
-import MouseMoveEffect from "@/components/mouse-move-effect"
-
-const inter = Inter({ subsets: ["latin"] })
+import "./globals.css";
+import type React from "react";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Amane Soft - Cutting-Edge Software Solutions",
-  description: "Amane Soft delivers innovative, high-performance software solutions for businesses of the future.",
-    generator: 'v0.dev'
-}
+  title: "꽥 - 쉽어하는 걸 싫 빼고 시작하자",
+  description: "음식 배달 및 추천 서비스",
+  generator: "Quack-kr",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-background text-foreground antialiased`}>
-        <MouseMoveEffect />
+    <html lang="ko">
+      <body className="bg-quack-yellow text-quack-black font-jamsil antialiased">
         {children}
       </body>
     </html>
-  )
+  );
 }

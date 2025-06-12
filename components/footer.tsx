@@ -1,77 +1,24 @@
-import Link from "next/link"
-import { Github, Twitter, Linkedin } from "lucide-react"
-
 export default function Footer() {
   return (
-    <footer className="border-t">
-      <div className="container flex flex-col gap-8 py-8 md:flex-row md:py-12">
-        <div className="flex-1 space-y-4">
-          <h2 className="font-bold">Amane Soft</h2>
-          <p className="text-sm text-muted-foreground">Pioneering software solutions for the digital age.</p>
-        </div>
-        <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-3">
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium">Solutions</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/ai-analytics" className="text-muted-foreground transition-colors hover:text-primary">
-                  AI Analytics
-                </Link>
-              </li>
-              <li>
-                <Link href="/cloud-services" className="text-muted-foreground transition-colors hover:text-primary">
-                  Cloud Services
-                </Link>
-              </li>
-            </ul>
+    <footer className="bg-quack-black text-quack-white py-12">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <div className="text-2xl font-bold mb-4">꽥</div>
+            <div className="space-y-2 text-sm text-quack-white/80">
+              <p>사업자등록번호 : 777-88-01234</p>
+              <p>통신판매업 신고번호 : 2025-서울강남-0126</p>
+              <p>주소 : 서울 강남구 테헤란로 123길 45, 6층(역삼동)</p>
+              <p>대표자 : contact@quack.co.kr 대표 : 김꽥꽥 | 전화번호 : 070-8877-4455</p>
+            </div>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium">Company</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/about" className="text-muted-foreground transition-colors hover:text-primary">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="text-muted-foreground transition-colors hover:text-primary">
-                  Careers
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h3 className="text-sm font-medium">Connect</h3>
-            <div className="flex space-x-4">
-              <Link
-                href="https://github.com/amanesoft"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Link>
-              <Link
-                href="https://twitter.com/amanesoft"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link
-                href="https://linkedin.com/company/amanesoft"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
+          <div className="text-right">
+            <div className="text-sm text-quack-white/80">
+              <p>개인정보처리방침 | 이용약관</p>
+              <p className="mt-4">Copyright © quack. All rights reserved.</p>
             </div>
           </div>
         </div>
-      </div>
-      <div className="container border-t py-6">
-        <p className="text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Amane Soft, Inc. All rights reserved.
-        </p>
       </div>
     </footer>
   )

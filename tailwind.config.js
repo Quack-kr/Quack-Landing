@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -11,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        jamsil: ["TheJamsil5", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -45,6 +54,14 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // 커스텀 색상 팔레트
+        "quack-yellow": "#F5C622",
+        "quack-white": "#EFEEDF",
+        "quack-icon-bg": "#D8A82D",
+        "quack-box-bg": "#BC8B38",
+        "quack-illustration": "#9C6D38",
+        "quack-placeholder": "#A8A7A1",
+        "quack-black": "#070706",
       },
       borderRadius: {
         lg: "var(--radius)",
