@@ -68,6 +68,167 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontWeight: {
+        regular: "400",
+        medium: "500",
+        semiBold: "600",
+        bold: "700",
+      },
+      fontSize: ({ theme }) => ({
+        // Headline
+        "headline-large": [
+          "80px",
+          {
+            lineHeight: "100px",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "headline-mobile": [
+          "32px",
+          {
+            lineHeight: "40px",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "headline-medium": [
+          "64px",
+          {
+            lineHeight: "80px",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "headline-small": [
+          "48px",
+          {
+            lineHeight: "60px",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "headline-small-mobile": [
+          "24px",
+          {
+            lineHeight: "30px",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+
+        // Body
+        "body-x-large": [
+          "40px",
+          {
+            lineHeight: "100%",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "body-large": [
+          "24px",
+          {
+            lineHeight: "32px",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.regular"),
+          },
+        ],
+        "body-small": [
+          "18px",
+          {
+            lineHeight: "24px",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.regular"),
+          },
+        ],
+        "body-small-modile": [
+          "12px",
+          {
+            lineHeight: "14px",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.medium"),
+          },
+        ],
+
+        // Label
+        "label-large": [
+          "32px",
+          {
+            lineHeight: "100%",
+            letterSpacing: "1px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "label-large-mobile": [
+          "20px",
+          {
+            lineHeight: "100%",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "label-large-semi": [
+          "30px",
+          {
+            lineHeight: "100%",
+            letterSpacing: "1px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "label-medium": [
+          "24px",
+          {
+            lineHeight: "100%",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "label-medium-semi": [
+          "24px",
+          {
+            lineHeight: "31.99px",
+            letterSpacing: "-0.02em",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "label-medium-mobile": [
+          "16px",
+          {
+            lineHeight: "100%",
+            letterSpacing: "1px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "label-small": [
+          "20px",
+          {
+            lineHeight: "30px",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.medium"),
+          },
+        ],
+        "label-small-mobile": [
+          "12px",
+          {
+            lineHeight: "100%",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+        "label-x-small-mobile": [
+          "10px",
+          {
+            lineHeight: "100%",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+      }),
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
@@ -78,11 +239,7 @@ module.exports = {
           to: { height: 0 },
         },
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

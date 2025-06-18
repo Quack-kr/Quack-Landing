@@ -1,33 +1,52 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import ScrambledText from "./ui/scramble-text";
+import ScrollVelocity from "./ui/scroll-velocity";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {
+  const isMobile = useIsMobile();
+
   return (
-    <section className="min-h-screen bg-quack-yellow relative overflow-hidden">
-      <div className="container mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="h-[calc(100vh-116px-40px)] md:h-auto bg-quack-yellow relative z-10">
+      <div className="container relative mx-auto px-5 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* 왼쪽 텍스트 영역 */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="pt-5 md:pt-10"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-quack-black leading-tight">
-              쉽어하는 걸<br />싫 빼고
+            <h1 className="text-headline-mobile md:text-headline-large mb-1 md:mb-2 text-quack-black">
+              싫어하는 걸<br />싹 빼고
               <br />
               시작하자.
             </h1>
-            <p className="text-lg text-quack-black/80 leading-relaxed">
-              배고픈 순간 먹고싶은 음식을 빠르게 찾아
+            <ScrambledText
+              radius={100}
+              duration={3}
+              speed={0.1}
+              scrambleChars={".:"}
+              className="text-body-small-modile md:text-body-small text-quack-black leading-relaxed md:mb-8"
+            >
+              배고픈 순간 먹고 싶은 음식은 떠오르지 않을 때
               <br />
-              근데 먹기 싫은건 빼고 골라 그래 사용하면
-              <br />빠 좋잖아 같이 쓸이야?
-            </p>
-            <Button className="bg-quack-black text-quack-white hover:bg-quack-illustration rounded-full px-8 py-6 text-lg">
-              Download on the App Store
+              근데 먹기 싫은 건 딱! 알고 있을때 그때 사용하면
+              <br />딱 좋을 거 같지 않아요?
+            </ScrambledText>
+
+            {/* 앱 스토어 다운로드 이미지 */}
+            <Button className="bg-quack-black text-quack-white rounded-[40px] px-8 py-4 box-content hidden md:flex hover:bg-quack-illustration">
+              <Image
+                src="/app-store.svg"
+                alt="app-download"
+                width={134}
+                height={40}
+              />
             </Button>
           </motion.div>
 
@@ -36,70 +55,135 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative"
+            className="relative hidden md:flex"
           >
-            <div className="relative w-full h-96">
-              {/* 메인 전구 */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-                className="absolute top-0 right-20 w-32 h-40 bg-quack-icon-bg rounded-full flex items-center justify-center"
-              >
-                <div className="w-20 h-24 bg-quack-white rounded-full relative">
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-quack-yellow rounded-full flex items-center justify-center">
-                    🍔
-                  </div>
-                </div>
-              </motion.div>
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{
+                duration: 3,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src="/hero-illust.svg"
+                alt="hero-illust"
+                width={694}
+                height={722}
+              />
+            </motion.div>
+          </motion.div>
 
-              {/* 플로팅 음식 아이콘들 */}
-              <motion.div
-                animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
-                transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-20 left-10 w-20 h-20 bg-quack-box-bg rounded-full flex items-center justify-center shadow-lg"
-              >
-                <span className="text-2xl">🍕</span>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -20, 0], rotate: [0, -5, 0] }}
-                transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-20 left-20 w-16 h-16 bg-quack-icon-bg rounded-full flex items-center justify-center shadow-lg"
-              >
-                <span className="text-xl">🍗</span>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -12, 0], rotate: [0, 3, 0] }}
-                transition={{ duration: 3.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 1.5 }}
-                className="absolute bottom-10 right-10 w-18 h-18 bg-quack-box-bg rounded-full flex items-center justify-center shadow-lg"
-              >
-                <span className="text-xl">🍜</span>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -18, 0], rotate: [0, -3, 0] }}
-                transition={{ duration: 4.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 2 }}
-                className="absolute top-32 right-5 w-14 h-14 bg-quack-icon-bg rounded-full flex items-center justify-center shadow-lg"
-              >
-                <span className="text-lg">🥗</span>
-              </motion.div>
-            </div>
+          {/* 모바일 오른쪽 일러스트 영역 */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="absolute top-0 right-5 block md:hidden"
+          >
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{
+                duration: 3,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+            >
+              <Image
+                src="/hero-illust-mobile.svg"
+                alt="hero-illust-mobile"
+                width={241}
+                height={371}
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
 
-      {/* 하단 스크롤 텍스트 */}
-      <div className="absolute bottom-0 left-0 w-full bg-quack-illustration text-quack-white py-2 overflow-hidden">
+      {/* 모바일 하단 앱 스토어 다운로드 이미지 */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="absolute bottom-[150px] w-full flex items-center justify-center"
+      >
+        <Button className="bg-quack-black text-quack-white rounded-[40px] w-[160px] h-[48px] flex items-center justify-center md:hidden hover:bg-quack-black">
+          <Image
+            src="/app-store-mobile.svg"
+            alt="app-download"
+            width={96}
+            height={28}
+          />
+        </Button>
+      </motion.div>
+
+      {/* 모바일 하단 조이스틱 백그라운드 이미지 */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
+      >
+        <div className="absolute bottom-10 left-0 w-full flex md:hidden">
+          <Image
+            src="/joystick-illust-mobile.svg"
+            alt="joystick-illust-mobile"
+            width={240}
+            height={109}
+          />
+        </div>
+      </motion.div>
+
+      {/* 모바일 하단 스크롤 텍스트 */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
+      >
+        <div className="absolute bottom-0 left-0 w-full h-10 bg-quack-illustration text-quack-yellow flex items-center z-10 overflow-hidden md:hidden">
+          <ScrollVelocity
+            velocity={isMobile ? 100 : 200}
+            texts={[
+              "점심에 고기는 해비하고 햄버거는 너무 인스턴트고 피자는 어제 먹었구 치킨도 지금 안땡기고 밥은 먹어야대는데 뭘 먹어야되ㄴ 아 맞다! 저녁에 뭐 먹는다 했으니까 그거도 빼고 아 대리님 다이어트 한다니까 분식은 안드시겠지..",
+            ]}
+            className="whitespace-nowrap label-medium-mobile md:text-label-large"
+          />
+        </div>
+      </motion.div>
+
+      {/* 데스크탑 하단 */}
+      <div className="absolute bottom-0 left-0 md:relative md:bottom-auto md:left-auto w-full h-[200px] hidden md:flex">
+        <Image
+          src="/joystick-illust.svg"
+          alt="joystick-illust"
+          width={337}
+          height={198.64}
+          className="absolute bottom-[112.36px] right-1/2 -translate-x-1/2 z-10 hidden md:flex"
+        />
+
+        <Image
+          src="/background-illust.svg"
+          alt="background-illust"
+          fill
+          style={{ objectFit: "cover" }}
+        />
+
+        {/* 데스크탑 하단 스크롤 텍스트 */}
         <motion.div
-          animate={{ x: [1000, -1000] }}
-          transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="whitespace-nowrap text-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
         >
-          고기는 배비하고 햄버거는 너무 인스턴트고 피자는 아제 먹었구 치킨도 지금 안먹기고 맘은 먹어야하는데 뭘
-          먹어야하는 아 맞다! 저녁에 뭐 먹을까?
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-quack-illustration text-quack-yellow flex items-center z-10 overflow-hidden">
+            <ScrollVelocity
+              velocity={isMobile ? 100 : 200}
+              texts={[
+                "점심에 고기는 해비하고 햄버거는 너무 인스턴트고 피자는 어제 먹었구 치킨도 지금 안땡기고 밥은 먹어야대는데 뭘 먹어야되ㄴ 아 맞다! 저녁에 뭐 먹는다 했으니까 그거도 빼고 아 대리님 다이어트 한다니까 분식은 안드시겠지..",
+              ]}
+              className="whitespace-nowrap label-medium-mobile md:text-label-large"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
