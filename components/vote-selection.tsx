@@ -49,16 +49,16 @@ export default function VoteSelection() {
 
   return (
     <section className="h-auto bg-quack-yellow relative z-10">
-      <div className="container relative px-0 pt-10 pb-5 md:pt-[160px] md:pb-20">
-        <div className="grid grid-cols-1 mb-3 px-5 md:mb-[60px] md:px-10 md:grid-cols-2 md:gap-12">
+      <div className="container relative px-0 pt-10 pb-5 xl:pt-[160px] xl:pb-20 xl:max-w-full">
+        <div className="grid grid-cols-1 mb-3 px-5 xl:mb-[60px] xl:grid-cols-2 xl:gap-12 xl:w-[75%] xl:mx-auto xl:px-0">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="md:mb-16"
+            className="xl:mb-16"
           >
-            <h2 className="text-headline-mobile md:text-headline-medium mb-1 md:mb-2 text-quack-black">
+            <h2 className="text-headline-mobile xl:text-headline-medium mb-1 xl:mb-2 text-quack-black">
               빼고 찾은 식당
               <br />
               갈까? 말까?
@@ -70,7 +70,7 @@ export default function VoteSelection() {
               duration={3}
               speed={0.1}
               scrambleChars={".:"}
-              className="text-body-small-modile md:text-body-large text-quack-black"
+              className="text-body-small-modile xl:text-body-large text-quack-black"
             >
               최근 3개월 사람들이 방문하는 이유와
               <br />
@@ -83,7 +83,7 @@ export default function VoteSelection() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative hidden md:flex"
+            className="relative hidden xl:flex xl:justify-self-end"
           >
             <motion.div
               animate={{ y: [0, -10, 0] }}
@@ -107,7 +107,7 @@ export default function VoteSelection() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="flex items-center justify-end w-full md:hidden"
+            className="flex items-center justify-end w-full xl:hidden"
           >
             <motion.div
               animate={{ y: [0, -5, 0] }}
@@ -134,12 +134,12 @@ export default function VoteSelection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-5 md:px-10 md:gap-[130px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-5 xl:gap-[130px] xl:w-[75%] xl:mx-auto xl:px-0 xl:max-w-full">
             <div>
-              <h3 className="text-label-large-mobile text-quack-white mb-3 md:text-body-x-large md:mb-4">
+              <h3 className="text-label-large-mobile text-quack-white mb-3 xl:text-body-x-large xl:mb-4">
                 갈까?
               </h3>
-              <div className="space-y-2 md:space-y-4">
+              <div className="space-y-2 xl:space-y-4">
                 {surveyData
                   .filter((item) => item.type === "갈까?")
                   .map((item, index) => (
@@ -149,20 +149,20 @@ export default function VoteSelection() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="bg-quack-box-bg text-quack-white pl-2 pr-4 h-10 rounded-[8px] flex justify-between items-center md:h-20 md:pl-4 md:pr-[25.5px]"
+                      className="bg-quack-box-bg text-quack-white pl-2 pr-4 h-10 rounded-[8px] flex justify-between items-center xl:h-20 xl:pl-4 xl:pr-[25.5px]"
                     >
-                      <div className="flex items-center gap-1 md:gap-2">
+                      <div className="flex items-center gap-1 xl:gap-2">
                         <Image
                           src={item.src}
                           alt=""
                           width={isMobile ? 24 : 48}
                           height={isMobile ? 24 : 48}
                         />
-                        <span className="text-label-small-mobile md:text-label-medium">
+                        <span className="text-label-small-mobile xl:text-label-medium">
                           {item.question}
                         </span>
                       </div>
-                      <span className="text-label-small-mobile md:text-label-medium">
+                      <span className="text-label-small-mobile xl:text-label-medium">
                         {item.count}
                       </span>
                     </motion.div>
@@ -171,10 +171,10 @@ export default function VoteSelection() {
             </div>
 
             <div>
-              <h3 className="text-label-large-mobile text-quack-white mb-3 md:text-body-x-large md:mb-4">
+              <h3 className="text-label-large-mobile text-quack-white mb-3 xl:text-body-x-large xl:mb-4">
                 말까?
               </h3>
-              <div className="space-y-2 md:space-y-4">
+              <div className="space-y-2 xl:space-y-4">
                 {surveyData
                   .filter((item) => item.type === "말까?")
                   .map((item, index) => (
@@ -184,20 +184,20 @@ export default function VoteSelection() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="bg-quack-box-bg text-quack-white pl-2 pr-4 h-10 rounded-[8px] flex justify-between items-center md:h-20 md:pl-4 md:pr-[25.5px]"
+                      className="bg-quack-box-bg text-quack-white pl-2 pr-4 h-10 rounded-[8px] flex justify-between items-center xl:h-20 xl:pl-4 xl:pr-[25.5px]"
                     >
-                      <div className="flex items-center gap-1 md:gap-2">
+                      <div className="flex items-center gap-1 xl:gap-2">
                         <Image
                           src={item.src}
                           alt=""
                           width={isMobile ? 24 : 48}
                           height={isMobile ? 24 : 48}
                         />
-                        <span className="text-label-small-mobile md:text-label-medium">
+                        <span className="text-label-small-mobile xl:text-label-medium">
                           {item.question}
                         </span>
                       </div>
-                      <span className="text-label-small-mobile md:text-label-medium">
+                      <span className="text-label-small-mobile xl:text-label-medium">
                         {item.count}
                       </span>
                     </motion.div>

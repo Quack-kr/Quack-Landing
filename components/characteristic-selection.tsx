@@ -42,16 +42,16 @@ export default function CharacteristicSelection() {
 
   return (
     <section className="h-auto bg-quack-yellow relative z-10">
-      <div className="container relative px-0 pt-10 pb-5 md:pt-[160px] md:pb-20">
-        <div className="grid grid-cols-1 mb-4 px-5 md:px-10 md:grid-cols-2 md:gap-12">
+      <div className="container relative px-0 pt-10 pb-5 xl:pt-[160px] xl:pb-20 xl:max-w-full">
+        <div className="grid grid-cols-1 mb-4 px-5 xl:grid-cols-2 xl:gap-12 xl:w-[75%] xl:mx-auto xl:px-0">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="md:mb-16"
+            className="xl:mb-16"
           >
-            <h2 className="text-headline-mobile md:text-headline-medium mb-1 md:mb-2 text-quack-black">
+            <h2 className="text-headline-mobile xl:text-headline-medium mb-1 xl:mb-2 text-quack-black">
               그리고 난...
               <br />
               싫어하는 것도
@@ -62,7 +62,7 @@ export default function CharacteristicSelection() {
               duration={3}
               speed={0.1}
               scrambleChars={".:"}
-              className="text-body-small-modile md:text-body-large text-quack-black"
+              className="text-body-small-modile xl:text-body-large text-quack-black"
             >
               이러면 뭐가 남을진 모르겠지만
               <br />다 계획이 있으시겠죠?
@@ -74,7 +74,7 @@ export default function CharacteristicSelection() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative hidden md:flex"
+            className="relative hidden xl:flex xl:justify-self-end"
           >
             <motion.div
               animate={{ y: [0, -10, 0] }}
@@ -98,7 +98,7 @@ export default function CharacteristicSelection() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="flex items-center justify-end w-full md:hidden"
+            className="flex items-center justify-end w-full xl:hidden"
           >
             <motion.div
               animate={{ y: [0, -5, 0] }}

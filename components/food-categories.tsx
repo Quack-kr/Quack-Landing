@@ -46,16 +46,16 @@ export default function FoodCategories() {
 
   return (
     <section className="h-auto bg-quack-yellow relative z-10">
-      <div className="container relative px-0 pt-10 pb-5 md:pt-[160px] md:pb-20 md:max-w-full">
-        <div className="grid grid-cols-1 mb-6 px-5 md:mb-[146px] md:px-10 md:grid-cols-2 md:gap-12 md:max-w-[1440px] md:mx-auto">
+      <div className="container relative px-0 pt-10 pb-5 xl:pt-[160px] xl:pb-20 xl:max-w-full">
+        <div className="grid grid-cols-1 mb-6 px-5 xl:mb-[146px] xl:grid-cols-2 xl:gap-12 xl:w-[75%] xl:mx-auto xl:px-0 xl:max-w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="md:mb-16"
+            className="xl:mb-16"
           >
-            <h2 className="text-headline-mobile md:text-headline-medium mb-1 md:mb-2 text-quack-black">
+            <h2 className="text-headline-mobile xl:text-headline-medium mb-1 xl:mb-2 text-quack-black">
               먹고싶은건
               <br />
               몰라도
@@ -67,7 +67,7 @@ export default function FoodCategories() {
               duration={3}
               speed={0.1}
               scrambleChars={".:"}
-              className="text-body-small-modile md:text-body-large text-quack-black"
+              className="text-body-small-modile xl:text-body-large text-quack-black"
             >
               안 땡기는거 어제 먹은거 좀 있다 먹을거
               <br />
@@ -80,7 +80,7 @@ export default function FoodCategories() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative hidden md:flex"
+            className="relative hidden xl:flex xl:justify-self-end"
           >
             <motion.div
               animate={{ y: [0, -10, 0] }}
@@ -104,7 +104,7 @@ export default function FoodCategories() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="flex items-center justify-end w-full md:hidden"
+            className="flex items-center justify-end w-full xl:hidden"
           >
             <motion.div
               animate={{ y: [0, -5, 0] }}

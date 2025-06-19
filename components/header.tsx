@@ -4,16 +4,16 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="w-full h-[116px] md:h-[200px]">
-      <div className="container mx-auto flex justify-between items-center px-5 pt-10 pb-5 md:px-10">
+    <header className="w-full h-[116px] xl:h-[200px]">
+      <div className="container mx-auto flex justify-between items-center px-5 pt-10 pb-5 xl:w-[75%] xl:mx-auto xl:px-0 xl:max-w-full">
         <Link href="/">
           <img
             src="/logo.svg"
             alt="quack-logo"
-            className="w-[60px] h-[56px] md:w-[110px] md:h-[100px]"
+            className="w-[60px] h-[56px] xl:w-[110px] xl:h-[100px]"
           />
         </Link>
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden xl:flex items-center space-x-8">
           <Link
             href="#services"
             className="text-quack-black hover:text-quack-illustration font-medium"

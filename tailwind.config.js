@@ -60,7 +60,7 @@ module.exports = {
         "quack-icon-bg": "#D8A82D",
         "quack-box-bg": "#BC8B38",
         "quack-illustration": "#9C6D38",
-        "quack-placeholder": "#A8A7A1",
+        "quack-gray": "#A8A7A1",
         "quack-black": "#070706",
       },
       borderRadius: {
@@ -220,6 +220,24 @@ module.exports = {
           "10px",
           {
             lineHeight: "100%",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.bold"),
+          },
+        ],
+
+        // Footer
+        "quack-footer": [
+          "16px",
+          {
+            lineHeight: "119%",
+            letterSpacing: "0px",
+            fontWeight: theme("fontWeight.regular"),
+          },
+        ],
+        "quack-footer-mobile": [
+          "8px",
+          {
+            lineHeight: "119%",
             letterSpacing: "0px",
             fontWeight: theme("fontWeight.bold"),
           },
