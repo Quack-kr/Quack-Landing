@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import ScrambledText from "./ui/scramble-text";
-import ScrollVelocity from "./ui/scroll-velocity";
+import ScrambledText from "@/components/ui/scramble-text";
+import ScrollVelocity from "@/components/ui/scroll-velocity";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import ScrambledText from "./ui/scramble-text";
+import ScrambledText from "@/components/ui/scramble-text";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const generateReviewCategories = (isMobile: boolean = false) => {

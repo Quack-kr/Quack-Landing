@@ -1,12 +1,12 @@
-import Header from "@/components/header";
-import HeroSection from "@/components/hero-section";
-import FoodCategories from "@/components/food-categories";
-import CharacteristicSelection from "@/components/characteristic-selection";
-import VoteSelection from "@/components/vote-selection";
-import ReviewSelection from "@/components/review-selection";
-import LetsSubscribe from "@/components/lets-subscribe";
-import SubscriptionSection from "@/components/subscription-section";
-import Footer from "@/components/footer";
+import Header from "./components/header";
+import HeroSection from "./components/hero-section";
+import FoodCategories from "./components/food-categories";
+import CharacteristicSelection from "./components/characteristic-section";
+import VoteSelection from "./components/vote-selection";
+import ReviewSelection from "./components/review-selection";
+import LetsSubscribe from "./components/lets-subscribe";
+import SubscriptionSection from "./components/subscription-section";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
