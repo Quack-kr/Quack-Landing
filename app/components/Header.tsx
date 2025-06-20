@@ -19,7 +19,7 @@ export default function Header() {
           <Link href="/">
             <img
               src="/logo.svg"
-              alt="quack-logo"
+              alt="꽥 플레이스"
               className="w-[60px] h-[56px] xl:w-[110px] xl:h-[100px]"
             />
           </Link>
