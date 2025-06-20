@@ -11,7 +11,7 @@ export default function HeroSection() {
   const isMobile = useIsMobile();
 
   return (
-    <section className="h-[calc(100vh-116px)] sm:h-[calc(100vh-116px-40px)] xl:h-auto bg-quack-yellow relative z-10">
+    <section className="h-[calc(100vh-116px-40px)] xl:h-auto bg-quack-yellow relative z-10">
       <div className="container relative mx-auto px-5 xl:w-[75%] xl:mx-auto xl:px-0 xl:max-w-full">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
           {/* 왼쪽 텍스트 영역 */}
@@ -31,7 +31,7 @@ export default function HeroSection() {
               duration={3}
               speed={0.1}
               scrambleChars={".:"}
-              className="text-body-small-modile xl:text-body-small text-quack-black leading-relaxed xl:mb-8"
+              className="font-pretendard text-body-small-modile xl:text-body-small text-quack-black leading-relaxed xl:mb-8"
             >
               배고픈 순간 먹고 싶은 음식은 떠오르지 않을 때
               <br />
@@ -57,21 +57,14 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.3 }}
             className="relative hidden xl:flex xl:justify-self-end"
           >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            >
+            <div>
               <Image
                 src="/hero-illust.svg"
                 alt="hero-illust"
                 width={694}
                 height={722}
               />
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* 모바일 오른쪽 일러스트 영역 */}
@@ -105,7 +98,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="absolute bottom-[120px] sm:bottom-[150px] w-full flex items-center justify-center"
+        className="absolute bottom-[124px] sm:bottom-[150px] w-full flex items-center justify-center"
       >
         <Button className="bg-quack-black text-quack-white rounded-[40px] w-[160px] h-[48px] flex items-center justify-center xl:hidden hover:bg-quack-black">
           <Image
@@ -141,7 +134,7 @@ export default function HeroSection() {
       >
         <div className="absolute bottom-0 left-0 w-full h-10 bg-quack-illustration text-quack-yellow flex items-center z-10 overflow-hidden xl:hidden">
           <ScrollVelocity
-            velocity={isMobile ? 100 : 200}
+            velocity={50}
             texts={[
               "점심에 고기는 해비하고 햄버거는 너무 인스턴트고 피자는 어제 먹었구 치킨도 지금 안땡기고 밥은 먹어야대는데 뭘 먹어야되ㄴ 아 맞다! 저녁에 뭐 먹는다 했으니까 그거도 빼고 아 대리님 다이어트 한다니까 분식은 안드시겠지..",
             ]}
@@ -175,7 +168,7 @@ export default function HeroSection() {
         >
           <div className="absolute bottom-0 left-0 w-full h-20 bg-quack-illustration text-quack-yellow flex items-center z-10 overflow-hidden">
             <ScrollVelocity
-              velocity={isMobile ? 100 : 200}
+              velocity={100}
               texts={[
                 "점심에 고기는 해비하고 햄버거는 너무 인스턴트고 피자는 어제 먹었구 치킨도 지금 안땡기고 밥은 먹어야대는데 뭘 먹어야되ㄴ 아 맞다! 저녁에 뭐 먹는다 했으니까 그거도 빼고 아 대리님 다이어트 한다니까 분식은 안드시겠지..",
               ]}

@@ -70,7 +70,7 @@ export default function VoteSelection() {
               duration={3}
               speed={0.1}
               scrambleChars={".:"}
-              className="text-body-small-modile xl:text-body-large text-quack-black"
+              className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black"
             >
               최근 3개월 사람들이 방문하는 이유와
               <br />
@@ -85,21 +85,14 @@ export default function VoteSelection() {
             transition={{ duration: 1, delay: 0.3 }}
             className="relative hidden xl:flex xl:justify-self-end"
           >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            >
+            <div>
               <Image
                 src="/hmm-illust.png"
                 alt="hmm-illust"
                 width={400}
                 height={328}
               />
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* 모바일 오른쪽 일러스트 영역 */}
@@ -162,7 +155,7 @@ export default function VoteSelection() {
                           {item.question}
                         </span>
                       </div>
-                      <span className="text-label-small-mobile xl:text-label-medium">
+                      <span className="font-pretendard text-label-small-mobile xl:text-label-medium">
                         {item.count}
                       </span>
                     </motion.div>

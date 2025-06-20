@@ -19,6 +19,7 @@ module.exports = {
     extend: {
       fontFamily: {
         jamsil: ["TheJamsil5", "sans-serif"],
+        pretendard: ["Pretendard", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -131,7 +132,7 @@ module.exports = {
           {
             lineHeight: "32px",
             letterSpacing: "0px",
-            fontWeight: theme("fontWeight.regular"),
+            fontWeight: theme("fontWeight.medium"),
           },
         ],
         "body-small": [
@@ -139,7 +140,7 @@ module.exports = {
           {
             lineHeight: "24px",
             letterSpacing: "0px",
-            fontWeight: theme("fontWeight.regular"),
+            fontWeight: theme("fontWeight.medium"),
           },
         ],
         "body-small-modile": [

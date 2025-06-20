@@ -67,7 +67,7 @@ export default function FoodCategories() {
               duration={3}
               speed={0.1}
               scrambleChars={".:"}
-              className="text-body-small-modile xl:text-body-large text-quack-black"
+              className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black"
             >
               안 땡기는거 어제 먹은거 좀 있다 먹을거
               <br />
@@ -82,21 +82,14 @@ export default function FoodCategories() {
             transition={{ duration: 1, delay: 0.3 }}
             className="relative hidden xl:flex xl:justify-self-end"
           >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            >
+            <div>
               <Image
                 src="/pizza-illust.svg"
                 alt="pizza-illust"
                 width={537}
                 height={330}
               />
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* 모바일 오른쪽 일러스트 영역 */}
@@ -145,7 +138,7 @@ export default function FoodCategories() {
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 10,
+                  duration: 20,
                   ease: "linear",
                 },
               }}
@@ -160,13 +153,7 @@ export default function FoodCategories() {
                       alt={item.name}
                       width={isMobile ? 56 : 150}
                       height={isMobile ? 75 : 192}
-                      className={`relative flex-shrink-0 ${
-                        item.name.includes("pizza")
-                          ? isMobile
-                            ? "top-[-20px]"
-                            : "top-[-72px]"
-                          : ""
-                      }`}
+                      className={`relative flex-shrink-0`}
                     />
                   )
                 )

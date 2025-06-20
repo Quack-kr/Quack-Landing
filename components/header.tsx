@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="w-full h-[116px] xl:h-[200px]">
-      <div className="container mx-auto flex justify-between items-center px-5 pt-10 pb-5 xl:w-[75%] xl:mx-auto xl:px-0 xl:max-w-full">
+    <header className="w-full h-[116px] xl:h-[200px] xl:fixed xl:top-0 xl:left-0 xl:z-50 xl:bg-quack-yellow">
+      <div className="container mx-auto flex justify-between items-center px-5 pt-10 pb-5 xl:w-[75%] xl:pt-20 xl:mx-auto xl:px-0 xl:max-w-full">
         <Link href="/">
           <img
             src="/logo.svg"
@@ -13,30 +13,35 @@ export default function Header() {
             className="w-[60px] h-[56px] xl:w-[110px] xl:h-[100px]"
           />
         </Link>
-        <nav className="hidden xl:flex items-center space-x-8">
-          <Link
-            href="#services"
-            className="text-quack-black hover:text-quack-illustration font-medium"
-          >
-            서비스 소개
-          </Link>
-          <Link
-            href="#features"
-            className="text-quack-black hover:text-quack-illustration font-medium"
-          >
-            사업자 가게관리
-          </Link>
-          <Link
-            href="#contact"
-            className="text-quack-black hover:text-quack-illustration font-medium"
-          >
-            문의하기
-          </Link>
-          <Button className="bg-quack-black text-quack-white hover:bg-quack-illustration rounded-full px-6">
-            앱 다운로드
-          </Button>
-        </nav>
-        <button className="flex md:hidden">
+        <div className="hidden xl:flex items-center">
+          <nav className="hidden xl:flex items-center space-x-8">
+            <Link
+              href="#services"
+              className="text-quack-black hover:text-quack-illustration font-medium"
+            >
+              서비스 소개
+            </Link>
+            <Link
+              href="#features"
+              className="text-quack-black hover:text-quack-illustration font-medium"
+            >
+              사업자 가게관리
+            </Link>
+            <Link
+              href="#contact"
+              className="text-quack-black hover:text-quack-illustration font-medium"
+            >
+              문의하기
+            </Link>
+          </nav>
+          <div className="hidden xl:flex items-center ml-[18px] space-x-6">
+            <span className="inline-block w-[1.5px] h-[13px] bg-[#2A2925]" />
+            <Button className="bg-quack-black hover:bg-quack-illustration rounded-full px-6 text-quack-yellow">
+              앱 다운로드
+            </Button>
+          </div>
+        </div>
+        <button className="flex xl:hidden">
           <Image
             src="/hamburger-menu.svg"
             alt="hamburger-menu"

@@ -10,7 +10,7 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-quack-yellow max-w-[100vw] overflow-hidden">
+    <main className="min-h-screen bg-quack-yellow max-w-[100vw] overflow-hidden xl:pt-[200px]">
       <Header />
       <HeroSection />
       <FoodCategories />
@@ -20,6 +20,6 @@ export default function Home() {
       <LetsSubscribe />
       <SubscriptionSection />
       <Footer />
-    </div>
+    </main>
   );
 }

@@ -38,6 +38,13 @@
   font-weight: 800;
   src: url("/fonts/TheJamsil6ExtraBold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 45 920;
+  src: url("/fonts/PretendardVariable.woff2") format("woff2-variations");
+  font-display: swap;
+}
 
 @layer base {
   * {

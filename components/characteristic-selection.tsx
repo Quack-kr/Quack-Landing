@@ -43,7 +43,7 @@ export default function CharacteristicSelection() {
   return (
     <section className="h-auto bg-quack-yellow relative z-10">
       <div className="container relative px-0 pt-10 pb-5 xl:pt-[160px] xl:pb-20 xl:max-w-full">
-        <div className="grid grid-cols-1 mb-4 px-5 xl:grid-cols-2 xl:gap-12 xl:w-[75%] xl:mx-auto xl:px-0">
+        <div className="grid grid-cols-1 mb-4 px-5 xl:mb-[72px] xl:grid-cols-2 xl:gap-12 xl:w-[75%] xl:mx-auto xl:px-0">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function CharacteristicSelection() {
               duration={3}
               speed={0.1}
               scrambleChars={".:"}
-              className="text-body-small-modile xl:text-body-large text-quack-black"
+              className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black"
             >
               이러면 뭐가 남을진 모르겠지만
               <br />다 계획이 있으시겠죠?
@@ -76,21 +76,14 @@ export default function CharacteristicSelection() {
             transition={{ duration: 1, delay: 0.3 }}
             className="relative hidden xl:flex xl:justify-self-end"
           >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            >
+            <div>
               <Image
                 src="/subtract-illust.png"
                 alt="subtract-illust"
                 width={394}
                 height={478}
               />
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* 모바일 오른쪽 일러스트 영역 */}
@@ -140,7 +133,7 @@ export default function CharacteristicSelection() {
                 x: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 10,
+                  duration: 20,
                   ease: "linear",
                 },
               }}

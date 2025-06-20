@@ -73,7 +73,7 @@ export default function ReviewSelection() {
               duration={3}
               speed={0.1}
               scrambleChars={".:"}
-              className="text-body-small-modile xl:text-body-large text-quack-black"
+              className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black"
             >
               웨이팅까지 하고 들어간 맛집
               <br />
@@ -90,21 +90,14 @@ export default function ReviewSelection() {
             transition={{ duration: 1, delay: 0.3 }}
             className="relative hidden xl:flex xl:justify-self-end"
           >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            >
+            <div>
               <Image
                 src="/what-illust.png"
                 alt="what-illust"
                 width={512}
                 height={368}
               />
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* 모바일 오른쪽 일러스트 영역 */}

@@ -20,7 +20,7 @@ export default function LetsSubscribe() {
               <br />
               꽥에서 시작
             </h2>
-            <p className="text-body-small-modile text-center xl:text-body-large text-quack-black">
+            <p className="font-pretendard text-body-small-modile text-center xl:text-body-large text-quack-black">
               미친맛을 자랑하는 가게 메뉴를 알리고
               <br />
               상위노출을 노려보세요!
