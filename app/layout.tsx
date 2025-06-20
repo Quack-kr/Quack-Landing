@@ -17,6 +17,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className="bg-quack-yellow text-quack-black font-jamsil antialiased">
         {children}
+        <div id="modal" />
       </body>
     </html>
   );

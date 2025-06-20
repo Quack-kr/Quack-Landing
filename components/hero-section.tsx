@@ -74,21 +74,14 @@ export default function HeroSection() {
             transition={{ duration: 1, delay: 0.3 }}
             className="absolute top-0 right-5 block xl:hidden"
           >
-            <motion.div
-              animate={{ y: [0, -5, 0] }}
-              transition={{
-                duration: 3,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-              }}
-            >
+            <div>
               <Image
                 src="/hero-illust-mobile.svg"
                 alt="hero-illust-mobile"
                 width={241}
                 height={371}
               />
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
