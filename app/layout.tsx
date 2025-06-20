@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   publisher: "Qauck.Kr",
 
   // Canonical URL - replace with your actual domain when deployed
-  metadataBase: new URL("https://quack.io.kr"),
+  metadataBase: new URL("https://landing.quack.io.kr"),
   alternates: {
     canonical: "/",
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://quack.io.kr",
+    url: "https://landing.quack.io.kr",
     title: "꽥 플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
     description:
       "내가 싫어하는 분위기, 어제 먹었던 음식, 고기 안 구워주는 식당까지 다 빼고 실망하지 않을 장소만 추천하는 네거티브 필터링 기반 맛집 탐색 서비스입니다.",
