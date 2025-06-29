@@ -23,6 +23,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { postInquiry } from "@/apis/services/inquiry";
 
 const inquirySchema = z.object({
   name: z.string().min(1, "성함을 입력해 주세요."),
@@ -40,6 +41,7 @@ export default function InquiryDialog({
   onClose: () => void;
 }) {
   const [complete, setComplete] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const form = useForm<InquirySchema>({
     resolver: zodResolver(inquirySchema),
@@ -53,12 +55,38 @@ export default function InquiryDialog({
   useEffect(() => {
     if (!open) {
       setComplete(false);
+      setLoading(false);
       form.reset();
     }
   }, [open, form]);
 
-  const onSubmit = () => {
-    setComplete(true);
+  const handleServerError = (error: any) => {
+    if (error?.data) {
+      Object.entries(error.data).forEach(([key, msg]) => {
+        if (key === "message") {
+          form.setError("content", { message: msg as string });
+        } else {
+          form.setError(key as keyof InquirySchema, { message: msg as string });
+        }
+      });
+    }
+  };
+
+  const onSubmit = async (data: InquirySchema) => {
+    setLoading(true);
+    try {
+      await postInquiry({
+        name: data.name,
+        email: data.email,
+        message: data.content,
+      });
+      setComplete(true);
+      form.reset();
+    } catch (error) {
+      handleServerError(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -91,6 +119,7 @@ export default function InquiryDialog({
                           placeholder="성함을 입력해주세요"
                           className="font-pretendard bg-[#21211D] h-14 pl-6 rounded-[6px] border border-[#A8A7A1] text-[#F9F8F4] font-medium placeholder:text-[#A8A7A1] placeholder:font-medium"
                           {...field}
+                          disabled={loading}
                         />
                       </FormControl>
                       <FormMessage className="font-pretendard text-red-500" />
@@ -111,6 +140,7 @@ export default function InquiryDialog({
                           placeholder="이메일을 입력해주세요"
                           className="font-pretendard bg-[#21211D] h-14 pl-6 rounded-[6px] border border-[#A8A7A1] text-[#F9F8F4] font-medium placeholder:text-[#A8A7A1] placeholder:font-medium"
                           {...field}
+                          disabled={loading}
                         />
                       </FormControl>
                       <FormMessage className="font-pretendard text-red-500" />
@@ -131,6 +161,7 @@ export default function InquiryDialog({
                           placeholder="문의하실 내용을 입력해주세요"
                           className="font-pretendard bg-[#21211D] h-14 min-h-[120px] pt-4 pl-6 rounded-[8px] border border-[#A8A7A1] text-[#F9F8F4] font-medium placeholder:text-[#A8A7A1] placeholder:font-medium"
                           {...field}
+                          disabled={loading}
                         />
                       </FormControl>
                       <FormMessage className="font-pretendard text-red-500" />
@@ -141,8 +172,9 @@ export default function InquiryDialog({
                   <Button
                     type="submit"
                     className="font-pretendard w-[380px] rounded-[8px] mx-auto mt-4 bg-[#EFD800] text-[#171714] font-bold text-base h-14 hover:bg-[#FFD600] transition"
+                    disabled={loading}
                   >
-                    문의하기
+                    {loading ? "전송 중..." : "문의하기"}
                   </Button>
                 </DialogFooter>
               </form>

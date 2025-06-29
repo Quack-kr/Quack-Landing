@@ -5,6 +5,7 @@ import { z } from "zod";
 
 import { Button } from "./ui/button";
 import useDisableScroll from "@/hooks/useDisableScroll";
+import { postInquiry } from "@/apis/services/inquiry";
 
 const inquirySchema = z.object({
   name: z.string().min(1, "성함을 입력해 주세요."),
@@ -23,6 +24,7 @@ const MobileMenuDialog = ({
 
   const [mode, setMode] = useState<"menu" | "inquiry">("menu");
   const [showCompletePopup, setShowCompletePopup] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const form = useForm<InquirySchema>({
     resolver: zodResolver(inquirySchema),
@@ -30,15 +32,40 @@ const MobileMenuDialog = ({
     defaultValues: { name: "", email: "", content: "" },
   });
 
-  const onSubmit = () => {
-    setShowCompletePopup(true);
-    form.reset();
+  const handleServerError = (error: any) => {
+    if (error?.data) {
+      Object.entries(error.data).forEach(([key, msg]) => {
+        if (key === "message") {
+          form.setError("content", { message: msg as string });
+        } else {
+          form.setError(key as keyof InquirySchema, { message: msg as string });
+        }
+      });
+    }
+  };
+
+  const onSubmit = async (data: InquirySchema) => {
+    setLoading(true);
+    try {
+      await postInquiry({
+        name: data.name,
+        email: data.email,
+        message: data.content,
+      });
+      setShowCompletePopup(true);
+      form.reset();
+    } catch (error) {
+      handleServerError(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCloseInquiry = () => {
     setMode("menu");
     setShowCompletePopup(false);
     form.reset();
+    setLoading(false);
   };
 
   const handleCompleteConfirm = () => {
@@ -68,6 +95,7 @@ const MobileMenuDialog = ({
               autoComplete="off"
               placeholder="성함을 입력해주세요."
               className="block w-full bg-[#21211D] h-10 rounded-[8px] px-4 mt-2 text-[#EFEEDF] text-xs font-medium placeholder-[#A8A7A1] placeholder:font-medium focus:outline-none"
+              disabled={loading}
             />
             <span className="text-red-700 text-xs">
               {form.formState.errors.name?.message}
@@ -80,6 +108,7 @@ const MobileMenuDialog = ({
               autoComplete="off"
               placeholder="이메일을 입력해주세요."
               className="block w-full bg-[#21211D] h-10 rounded-[8px] px-4 mt-2 text-[#EFEEDF] text-xs font-medium placeholder-[#A8A7A1] placeholder:font-medium focus:outline-none"
+              disabled={loading}
             />
             <span className="text-red-700 text-xs">
               {form.formState.errors.email?.message}
@@ -92,6 +121,7 @@ const MobileMenuDialog = ({
               autoComplete="off"
               placeholder="문의하실 내용을 입력해주세요."
               className="block w-full bg-[#21211D] h-10 rounded-[8px] px-4 py-4 mt-2 min-h-[110px] text-xs text-[#EFEEDF] font-medium placeholder-[#A8A7A1] placeholder:font-medium focus:outline-none"
+              disabled={loading}
             />
             <span className="text-red-700 text-xs">
               {form.formState.errors.content?.message}
@@ -102,8 +132,9 @@ const MobileMenuDialog = ({
             className={`w-full h-12 rounded-[8px] bg-[#21211D] font-bold hover:bg-[#21211D] 
     hover:text-[#A8A7A1] transition
     ${form.formState.isValid ? "text-white" : "text-[#A8A7A1]"}`}
+            disabled={loading}
           >
-            문의하기
+            {loading ? "전송 중..." : "문의하기"}
           </Button>
         </form>
       </div>
