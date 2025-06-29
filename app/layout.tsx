@@ -79,7 +79,7 @@ export const metadata: Metadata = {
 
   // Verification for search console (replace with actual verification codes when available)
   verification: {
-    google: "google-site-verification=your-verification-code",
+    google: "google-site-verification=G-1TKF5L0VLJ",
     // yandex: "yandex-verification-code",
     // bing: "bing-verification-code",
   },
@@ -130,6 +130,10 @@ export default function RootLayout({
         {/* Additional meta tags that can't be added via the metadata object */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="naver-site-verification"
+          content="a0af0f145bae4fe882fbc13e1baf74e8a40f0ab7"
+        />
         <link rel="apple-touch-icon" href="/logo.png" />
       </head>
       <body className="bg-quack-yellow text-quack-black font-jamsil antialiased">
