@@ -1,16 +1,19 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { useReducer } from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+import { Button } from "@/components/ui/button";
 import MobileMenuDialog from "@/components/mobile-menu-dialog";
-import { useIsMobile } from "@/hooks/use-mobile";
-import DescktopMenuDialog from "@/components/desktop-menu-dialog";
+import DescktopMenuDialog from "@/components/desktop-inquiry-dialog";
 
 export default function Header() {
-  const isMobile = useIsMobile();
   const [showMenuDialog, toggleMenuDialog] = useReducer((open) => !open, false);
+  const [showInquiryDialog, toggleInquiryDialog] = useReducer(
+    (open) => !open,
+    false
+  );
 
   return (
     <>
@@ -40,7 +43,7 @@ export default function Header() {
               <Link
                 href="#contact"
                 className="text-quack-black hover:text-quack-illustration font-medium"
-                onClick={toggleMenuDialog}
+                onClick={toggleInquiryDialog}
               >
                 문의하기
               </Link>
@@ -62,12 +65,13 @@ export default function Header() {
           </button>
         </div>
       </header>
-      {showMenuDialog &&
-        (isMobile ? (
-          <MobileMenuDialog toggleMenuDialog={toggleMenuDialog} />
-        ) : (
-          <DescktopMenuDialog toggleMenuDialog={toggleMenuDialog} />
-        ))}
+      <DescktopMenuDialog
+        open={showInquiryDialog}
+        onClose={toggleInquiryDialog}
+      />
+      {showMenuDialog && (
+        <MobileMenuDialog toggleMenuDialog={toggleMenuDialog} />
+      )}
     </>
   );
 }

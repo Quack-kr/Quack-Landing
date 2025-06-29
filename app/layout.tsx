@@ -1,6 +1,6 @@
 import "./globals.css";
 import type React from "react";
-import { type Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
   title: "꽥 플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
@@ -109,6 +109,14 @@ export const metadata: Metadata = {
     telephone: false,
   },
   manifest: "/manifest.json", // This will need to be created
+};
+
+export const viewport: Viewport = {
+  themeColor: "white",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
