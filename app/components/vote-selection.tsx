@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ScrambledText from "@/components/ui/scramble-text";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -65,17 +64,11 @@ export default function VoteSelection() {
               <br />
               고민될 땐
             </h2>
-            <ScrambledText
-              radius={100}
-              duration={3}
-              speed={0.1}
-              scrambleChars={".:"}
-              className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black"
-            >
+            <p className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black">
               최근 3개월 사람들이 방문하는 이유와
               <br />
               가기 망설이는 이유까지 알고 가보자고!
-            </ScrambledText>
+            </p>
           </motion.div>
 
           {/* 오른쪽 일러스트 영역 */}

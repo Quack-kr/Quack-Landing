@@ -103,9 +103,12 @@ export default function SubscriptionSection() {
                   메뉴광고만 가능한 구독형 광고입니다.
                 </p>
 
-                <Button className="w-full bg-quack-yellow text-label-medium-mobile text-quack-black hover:bg-quack-icon-bg font-bold h-12 xl:h-[72px] rounded-[23.33px] xl:rounded-[40px] xl:text-label-medium xl:mb-6">
+                <a
+                  href="https://biz.quack.io.kr/"
+                  className="w-full flex items-center justify-center bg-quack-yellow text-label-medium-mobile text-quack-black hover:bg-quack-icon-bg font-bold h-12 xl:h-[72px] rounded-[23.33px] xl:rounded-[40px] xl:text-label-medium xl:mb-6"
+                >
                   구독하기
-                </Button>
+                </a>
               </div>
             </motion.div>
 

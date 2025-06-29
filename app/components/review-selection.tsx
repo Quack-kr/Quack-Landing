@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import ScrambledText from "@/components/ui/scramble-text";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const generateReviewCategories = (isMobile: boolean = false) => {
@@ -68,19 +67,13 @@ export default function ReviewSelection() {
               <br />
               뭐가 맛있는데?
             </h2>
-            <ScrambledText
-              radius={100}
-              duration={3}
-              speed={0.1}
-              scrambleChars={".:"}
-              className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black"
-            >
+            <p className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black">
               웨이팅까지 하고 들어간 맛집
               <br />
               메뉴가 너무 많아서 고민된다면
               <br />
               미친맛 메뉴만 시키자!
-            </ScrambledText>
+            </p>
           </motion.div>
 
           {/* 오른쪽 일러스트 영역 */}

@@ -23,6 +23,8 @@ const MobileMenuDialog = ({
   useDisableScroll();
 
   const [mode, setMode] = useState<"menu" | "inquiry">("menu");
+
+  const [showPcOnlyModal, setShowPcOnlyModal] = useState(false);
   const [showCompletePopup, setShowCompletePopup] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -149,8 +151,27 @@ const MobileMenuDialog = ({
           문의가 완료되었어요.
         </span>
         <Button
-          className="w-[160px] h-12 rounded-[40px] bg-quack-black text-quack-yellow font-bold mt-4"
+          className="w-[160px] h-12 rounded-[40px] bg-quack-black text-quack-yellow font-bold mt-4 hover:bg-quack-black hover:text-quack-yellow"
           onClick={handleCompleteConfirm}
+        >
+          확인
+        </Button>
+      </div>
+    </div>
+  );
+
+  // 가게관리 팝업 UI
+  const PcOnlyModal = (
+    <div className="fixed top-0 left-0 w-full h-full bg-[#07070699] z-[60] flex items-center justify-center">
+      <div className="bg-quack-yellow rounded-[20px] w-[calc(100vw-48px)] h-[144px] flex flex-col items-center justify-center shadow-lg">
+        <span className="font-bold text-quack-black text-center">
+          가게관리는
+          <br />
+          PC로만 이용가능해요
+        </span>
+        <Button
+          className="w-[160px] h-12 rounded-[40px] bg-quack-black text-quack-yellow font-bold mt-4 hover:bg-quack-black hover:text-quack-yellow"
+          onClick={() => setShowPcOnlyModal(false)}
         >
           확인
         </Button>
@@ -167,10 +188,19 @@ const MobileMenuDialog = ({
       />
       <section className="absolute top-[96px] left-0 w-full bg-quack-yellow rounded-bl-[20px] rounded-br-[20px] z-50">
         <div className="pt-1 pb-10 w-full flex flex-col items-center justify-center">
-          <button className="font-bold text-quack-black text-base mb-6">
+          <button
+            className="font-bold text-quack-black text-base mb-6"
+            onClick={toggleMenuDialog}
+          >
             서비스 소개
           </button>
-          <button className="font-bold text-quack-black text-base mb-6">
+          <button
+            className="font-bold text-quack-black text-base mb-6"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowPcOnlyModal(true);
+            }}
+          >
             사장님 가게관리
           </button>
           <button
@@ -180,7 +210,17 @@ const MobileMenuDialog = ({
             문의하기
           </button>
           <div className="w-full flex items-center justify-center">
-            <Button className="bg-quack-black text-quack-yellow rounded-[40px] w-[160px] h-[48px] flex items-center justify-center xl:hidden hover:bg-quack-black">
+            <Button
+              className="bg-quack-black text-quack-yellow rounded-[40px] w-[160px] h-[48px] flex items-center justify-center xl:hidden hover:bg-quack-black"
+              onClick={() => {
+                window.open(
+                  "https://www.apple.com/kr/app-store/",
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+                toggleMenuDialog();
+              }}
+            >
               앱 다운로드
             </Button>
           </div>
@@ -194,6 +234,7 @@ const MobileMenuDialog = ({
       {mode === "menu" && Menu}
       {mode === "inquiry" && InquiryForm}
       {showCompletePopup && CompletePopup}
+      {showPcOnlyModal && PcOnlyModal}
     </>
   );
 };

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import ScrambledText from "@/components/ui/scramble-text";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const generateCharacteristicCategories = (isMobile: boolean = false) => {
@@ -57,16 +56,10 @@ export default function CharacteristicSelection() {
               싫어하는 것도
               <br />다 빼버려!
             </h2>
-            <ScrambledText
-              radius={100}
-              duration={3}
-              speed={0.1}
-              scrambleChars={".:"}
-              className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black"
-            >
+            <p className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black">
               이러면 뭐가 남을진 모르겠지만
               <br />다 계획이 있으시겠죠?
-            </ScrambledText>
+            </p>
           </motion.div>
 
           {/* 오른쪽 일러스트 영역 */}

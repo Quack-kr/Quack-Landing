@@ -42,13 +42,23 @@ export default function Footer() {
           <div className="text-left xl:flex xl:flex-col xl:items-start xl:justify-self-end">
             <div className="text-quack-footer-mobile text-quack-gray xl:text-quack-footer">
               <div className="flex items-center gap-[4px] xl:gap-2">
-                <button className="font-bold cursor-pointer">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://skitter-editor-255.notion.site/1c47fc0319a2809fa183dd63a900b5a3"
+                  className="font-bold cursor-pointer"
+                >
                   개인정보처리방침
-                </button>
+                </a>
                 <span className="inline-block w-[1.5px] xl:w-[2px] h-[6px] xl:h-[13px] bg-[#A8A7A1]" />
-                <button className="font-bold cursor-pointer">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://skitter-editor-255.notion.site/1c47fc0319a2809097cecd411bc8a674"
+                  className="font-bold cursor-pointer"
+                >
                   꽥 서비스 이용약관
-                </button>
+                </a>
               </div>
               <p className="mt-2">Copyright © quack. All rights reserved.</p>
             </div>

@@ -10,7 +10,7 @@ import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-quack-yellow max-w-[100vw] overflow-hidden xl:pt-[200px]">
+    <main className="min-h-screen bg-quack-yellow max-w-[100vw] overflow-hidden xl:pt-[160px]">
       <Header />
       <HeroSection />
       <FoodCategories />

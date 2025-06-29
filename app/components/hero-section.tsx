@@ -1,17 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import ScrambledText from "@/components/ui/scramble-text";
 import ScrollVelocity from "@/components/ui/scroll-velocity";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {
-  const isMobile = useIsMobile();
-
   return (
-    <section className="h-[calc(100vh-116px-40px)] xl:h-auto bg-quack-yellow relative z-10">
+    <section className="h-[584px] xl:h-auto bg-quack-yellow relative z-10">
       <div className="container relative mx-auto px-5 xl:w-[75%] xl:mx-auto xl:px-0 xl:max-w-full">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12">
           {/* 왼쪽 텍스트 영역 */}
@@ -26,28 +21,27 @@ export default function HeroSection() {
               <br />
               시작하자.
             </h1>
-            <ScrambledText
-              radius={100}
-              duration={3}
-              speed={0.1}
-              scrambleChars={".:"}
-              className="font-pretendard text-body-small-modile xl:text-body-small text-quack-black leading-relaxed xl:mb-8"
-            >
+            <p className="font-pretendard text-body-small-modile xl:text-body-small text-quack-black leading-relaxed xl:mb-8">
               배고픈 순간 먹고 싶은 음식은 떠오르지 않을 때
               <br />
               근데 먹기 싫은 건 딱! 알고 있을때 그때 사용하면
               <br />딱 좋을 거 같지 않아요?
-            </ScrambledText>
+            </p>
 
             {/* 앱 스토어 다운로드 이미지 */}
-            <Button className="bg-quack-black text-quack-white rounded-[40px] px-8 py-4 box-content hidden xl:flex hover:bg-quack-illustration">
+            <a
+              href="https://www.apple.com/kr/app-store/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-quack-black text-quack-white w-max rounded-[40px] px-8 py-4 box-content hidden xl:flex hover:bg-quack-illustration"
+            >
               <Image
                 src="/app-store.svg"
                 alt="app-download"
                 width={134}
                 height={40}
               />
-            </Button>
+            </a>
           </motion.div>
 
           {/* 오른쪽 일러스트 영역 */}
@@ -93,14 +87,19 @@ export default function HeroSection() {
         transition={{ duration: 0.8, delay: 0.3 }}
         className="absolute bottom-[124px] sm:bottom-[150px] w-full flex items-center justify-center"
       >
-        <Button className="bg-quack-black text-quack-white rounded-[40px] w-[160px] h-[48px] flex items-center justify-center xl:hidden hover:bg-quack-black">
+        <a
+          href="https://www.apple.com/kr/app-store/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-quack-black text-quack-white rounded-[40px] w-[160px] h-[48px] flex items-center justify-center xl:hidden hover:bg-quack-black"
+        >
           <Image
             src="/app-store-mobile.svg"
             alt="app-download"
             width={96}
             height={28}
           />
-        </Button>
+        </a>
       </motion.div>
 
       {/* 모바일 하단 조이스틱 백그라운드 이미지 */}

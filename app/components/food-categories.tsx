@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ScrambledText from "@/components/ui/scramble-text";
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -62,17 +61,11 @@ export default function FoodCategories() {
               <br />
               싫은건 알잖아?
             </h2>
-            <ScrambledText
-              radius={100}
-              duration={3}
-              speed={0.1}
-              scrambleChars={".:"}
-              className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black"
-            >
+            <p className="font-pretendard text-body-small-modile xl:text-body-large text-quack-black">
               안 땡기는거 어제 먹은거 좀 있다 먹을거
               <br />
               다! 빼면서 지금 먹을걸 찾아볼까요?
-            </ScrambledText>
+            </p>
           </motion.div>
 
           {/* 오른쪽 일러스트 영역 */}

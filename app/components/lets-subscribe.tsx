@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 export default function LetsSubscribe() {
   return (
@@ -34,11 +33,14 @@ export default function LetsSubscribe() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="w-full flex items-center justify-center"
           >
-            <Button className="bg-quack-black rounded-[40px] w-[160px] h-[48px] flex items-center justify-center xl:w-[200px] xl:h-[72px] hover:bg-quack-black">
+            <a
+              href="https://biz.quack.io.kr/"
+              className="bg-quack-black rounded-[40px] w-[160px] h-[48px] flex items-center justify-center xl:w-[200px] xl:h-[72px] hover:bg-quack-black"
+            >
               <span className="text-quack-white text-label-medium-mobile xl:text-label-medium">
                 입점 신청하기
               </span>
-            </Button>
+            </a>
           </motion.div>
         </div>
       </div>
