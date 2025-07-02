@@ -3,10 +3,11 @@ import type React from "react";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  title: "꽥 플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
+  title: "꽥플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
   description:
     "내가 싫어하는 분위기, 어제 먹었던 음식, 고기 안 구워주는 식당까지 다 빼고 실망하지 않을 장소만 추천하는 네거티브 필터링 기반 맛집 탐색 서비스입니다.",
   keywords: [
+    "꽥플레이스",
     "꽥 플레이스",
     "맛집 추천",
     "실패 없는 맛집",
@@ -18,12 +19,12 @@ export const metadata: Metadata = {
     "개인화 맛집 추천",
     "실시간 맛집 추천",
   ],
-  authors: [{ name: "Qauck Place Team" }],
-  creator: "Qauck.Kr",
-  publisher: "Qauck.Kr",
+  authors: [{ name: "꽥플레이스 팀" }],
+  creator: "꽥플레이스",
+  publisher: "꽥플레이스",
 
   // Canonical URL - replace with your actual domain when deployed
-  metadataBase: new URL("https://landing.quack.io.kr"),
+  metadataBase: new URL("https://quack.io.kr"),
   alternates: {
     canonical: "/",
   },
@@ -39,17 +40,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://landing.quack.io.kr",
-    title: "꽥 플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
+    url: "https://quack.io.kr",
+    title: "꽥플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
     description:
       "내가 싫어하는 분위기, 어제 먹었던 음식, 고기 안 구워주는 식당까지 다 빼고 실망하지 않을 장소만 추천하는 네거티브 필터링 기반 맛집 탐색 서비스입니다.",
-    siteName: "꽥 플레이스",
+    siteName: "꽥플레이스",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "꽥 플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
+        alt: "꽥플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
       },
     ],
   },
@@ -57,11 +58,11 @@ export const metadata: Metadata = {
   // Twitter card metadata
   twitter: {
     card: "summary_large_image",
-    title: "꽥 플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
+    title: "꽥플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
     description:
       "내가 싫어하는 분위기, 어제 먹었던 음식, 고기 안 구워주는 식당까지 다 빼고 실망하지 않을 장소만 추천하는 네거티브 필터링 기반 맛집 탐색 서비스입니다.",
     images: ["/og-image.png"], // Same as OG image
-    creator: "@Qauck", // Replace with actual Twitter handle when available
+    creator: "@꽥플레이스", // Replace with actual Twitter handle when available
   },
 
   // Robots directives
@@ -80,8 +81,6 @@ export const metadata: Metadata = {
   // Verification for search console (replace with actual verification codes when available)
   verification: {
     google: "google-site-verification=G-1TKF5L0VLJ",
-    // yandex: "yandex-verification-code",
-    // bing: "bing-verification-code",
   },
 
   // Theme color for browser UI
@@ -99,24 +98,16 @@ export const metadata: Metadata = {
   },
 
   // App metadata for PWA
-  applicationName: "꽥 플레이스",
+  applicationName: "꽥플레이스",
   appleWebApp: {
     capable: true,
-    title: "꽥 플레이스",
+    title: "꽥플레이스",
     statusBarStyle: "default",
   },
   formatDetection: {
     telephone: false,
   },
   manifest: "/manifest.json", // This will need to be created
-};
-
-export const viewport: Viewport = {
-  themeColor: "white",
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export default function RootLayout({
@@ -135,6 +126,12 @@ export default function RootLayout({
           content="a0af0f145bae4fe882fbc13e1baf74e8a40f0ab7"
         />
         <link rel="apple-touch-icon" href="/logo.png" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="꽥플레이스 RSS"
+          href="/rss.xml"
+        />
       </head>
       <body className="bg-quack-yellow text-quack-black font-jamsil antialiased">
         {children}

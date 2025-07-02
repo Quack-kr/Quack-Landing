@@ -17,7 +17,7 @@ export default function LetsSubscribe() {
             <h2 className="text-headline-small-mobile xl:text-headline-medium text-center mb-1 xl:mb-3 text-quack-black">
               우리 가게 홍보도
               <br />
-              꽥에서 시작
+              꽥플에서 시작
             </h2>
             <p className="font-pretendard text-body-small-modile text-center xl:text-body-large text-quack-black">
               미친맛을 자랑하는 가게 메뉴를 알리고

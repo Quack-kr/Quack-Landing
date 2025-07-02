@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>꽥플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?</title>
+    <link>https://quack.io.kr/</link>
+    <description>
+      내가 싫어하는 분위기, 어제 먹었던 음식, 고기 안 구워주는 식당까지 다 빼고 실망하지 않을 장소만 추천하는 네거티브 필터링 기반 맛집 탐색 서비스입니다.
+    </description>
+    <language>ko</language>
+    <copyright>꽥플레이스</copyright>
+    <managingEditor>꽥플레이스 팀</managingEditor>
+    <webMaster>꽥플레이스 팀</webMaster>
+    <lastBuildDate>Wed, 02 Jul 2025 09:25:00 +0900</lastBuildDate>
+    <pubDate>Wed, 02 Jul 2025 09:25:00 +0900</pubDate>
+    <image>
+      <url>https://quack.io.kr/og-image.png</url>
+      <title>꽥플레이스</title>
+      <link>https://quack.io.kr/</link>
+      <width>1200</width>
+      <height>630</height>
+    </image>
+    <item>
+      <title>꽥플레이스 오픈</title>
+      <link>https://quack.io.kr/</link>
+      <description>
+        꽥플레이스가 오픈했습니다! 싫어하는 걸 빼고, 실망 없는 맛집만 추천하는 새로운 경험을 만나보세요.
+      </description>
+      <pubDate>Wed, 02 Jul 2025 09:25:00 +0900</pubDate>
+      <guid>https://quack.io.kr/</guid>
+    </item>
+  </channel>
+</rss>
