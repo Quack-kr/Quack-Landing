@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://quack.io.kr/sitemap.xml
+Feed: https://quack.io.kr/rss.xml
