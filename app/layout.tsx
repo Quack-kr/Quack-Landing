@@ -1,5 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
 
@@ -137,6 +138,7 @@ export default function RootLayout({
       <body className="bg-quack-yellow text-quack-black font-jamsil antialiased">
         {children}
         <div id="modal" />
+        <GoogleAnalytics gaId="G-1TKF5L0VLJ" />
       </body>
     </html>
   );
