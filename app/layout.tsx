@@ -1,8 +1,11 @@
 import type React from "react";
 import type { Metadata } from "next";
+
+import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "꽥플레이스 | 싫어하는걸 빼면 남는건 좋아하는거 아니야?",
@@ -136,9 +139,49 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-quack-yellow text-quack-black font-jamsil antialiased">
-        {children}
-        <div id="modal" />
-        <GoogleAnalytics gaId="G-1TKF5L0VLJ" />
+        <Suspense fallback={null}>
+          {children}
+          <div id="modal" />
+          <GoogleAnalytics gaId="G-1TKF5L0VLJ" />
+        </Suspense>
+
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: "꽥플레이스",
+              url: "https://quack.io.kr/",
+              description:
+                "내가 싫어하는 분위기, 어제 먹었던 음식, 고기 안 구워주는 식당까지 다 빼고 실망하지 않을 장소만 추천하는 네거티브 필터링 기반 맛집 탐색 서비스입니다.",
+              applicationCategory: "FoodApplication",
+              operatingSystem: "Web",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "KRW",
+              },
+              screenshot: "https://quack.io.kr/og-image.png",
+              featureList:
+                "네거티브 필터링, 맞춤형 맛집 추천, 분위기/음식 제외, 실시간 추천, 실패 없는 맛집 탐색",
+              author: {
+                "@type": "Organization",
+                name: "꽥플레이스 팀",
+                url: "https://quack.io.kr/",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "꽥플레이스",
+                url: "https://quack.io.kr/",
+              },
+              inLanguage: "ko",
+              datePublished: "2025-07-02",
+              image: "https://quack.io.kr/og-image.png",
+            }),
+          }}
+        />
       </body>
     </html>
   );
