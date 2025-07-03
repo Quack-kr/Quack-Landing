@@ -85,7 +85,7 @@ export const metadata: Metadata = {
 
   // Verification for search console (replace with actual verification codes when available)
   verification: {
-    google: "google-site-verification=G-1TKF5L0VLJ",
+    google: "spTTPWCFWkTI6qUs2-O-CmHwXZJEYqomTiSrFnPNvMM",
   },
 
   // Theme color for browser UI
